@@ -1,3 +1,4 @@
+Assessment Smart Contract Project
 This project features a smart contract named Assessment, which allows for the management of product names, pricing, and ownership. Follow the instructions below to set up and run the project on your local machine.
 
 Getting Started
