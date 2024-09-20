@@ -1,62 +1,58 @@
-Assessment Smart Contract Project
-This project features a smart contract named Assessment, which allows for the management of product names, pricing, and ownership. Follow the instructions below to set up and run the project on your local machine.
+METACRAFTERS
+Smart Contract Integration with Frontend
+This project demonstrates the integration of a smart contract with a frontend application using Ethereum, React, and Hardhat.
 
-Getting Started
-After cloning the repository, you'll need to set up the environment and deploy the contract. Here’s how:
+Smart Contract
+The smart contract used in this project is Assessment.sol. It allows users to set and fetch a product name and price, manage ownership, and track changes through events.
+
+Frontend
+The frontend application is built using React and interacts with the deployed smart contract. The main functionality includes fetching the current product name and price, setting a new name, and updating the price.
 
 Prerequisites
-Ensure you have the following installed on your machine:
-
 Node.js
-npm (Node Package Manager)
-Hardhat
-Installation
-Install Dependencies:
+MetaMask extension for your browser
 
-Inside the project directory, open a terminal and run:
+Getting Started
+Clone the repository: git clone
 
-bash
-Copy code
-npm install
-Start a Local Hardhat Node:
+Install the dependencies:
+cd npm install
 
-Open another terminal in VS Code and start a local Hardhat node:
-
-bash
-Copy code
+Start a local Ethereum network:
 npx hardhat node
+
+This command starts a local Ethereum network using Hardhat. Make sure to note the network URL and use it to configure MetaMask in the next step.
+
+Configure MetaMask:
+Install the MetaMask extension for your browser. Create an Ethereum network in MetaMask and set the network URL to connect to your local Hardhat network.
+Import an account from your local Hardhat network into MetaMask. .
 Deploy the Smart Contract:
+To deploy the Assessment smart contract to your local network, run the following command in your project directory:
 
-In a third terminal, run the deployment script to deploy the contract to the local network:
+npx hardhat run scripts/deploy.js --network localhost
+Make sure the local Ethereum network is running before deploying the contract.
 
-bash
-Copy code
-npx hardhat run --network localhost scripts/deploy.js
-Running the Frontend
-If your project includes a frontend, you can launch it by running:
-
-bash
-Copy code
+Update the Frontend Configuration:
+In the index.js file, update the nameAddress variable with the deployed contract address obtained from the deployment step.
+#Start the Frontend Development Server:
 npm run dev
-The application will typically run at http://localhost:3000/.
+Open your browser and navigate to http://localhost:3000 to access the frontend application.
 
-Smart Contract Overview
-Contract Features
-Product Management: Initialize and manage product names and prices.
-Ownership Control: Only the contract owner can update product details.
-Event Logging: Track changes in ownership and price through emitted events.
-Functions
-setPrice(uint256 _newPrice): Update the product price (restricted to the owner).
-getPrice(): Retrieve the current product price.
-transferOwnership(address _newOwner): Transfer ownership to a new address.
-Testing
-Make sure to add tests to validate the functionality of the contract. You can create a test script in the test directory and run it using:
+Usage
+The main page of the frontend application displays the current product name and price fetched from the smart contract. To update the product name or price:
 
-bash
-Copy code
-npx hardhat test
-Contributing
-Feel free to submit issues or pull requests for enhancements or bug fixes.
+Enter a new name or price in the input fields.
+Click the "Set Name" or "Set Price" button.
+Ensure you have sufficient funds in the MetaMask account connected to the local Ethereum network. The updated values will be stored on the blockchain, and the page will display the new product name and price.
+
+Resources
+Ethereum
+React
+Hardhat
+MetaMask
+
+Authors
+Annu
 
 License
 This project is licensed under the MIT License.
