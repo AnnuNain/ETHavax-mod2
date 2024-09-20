@@ -1,4 +1,5 @@
 #METACRAFTERS
+
 Smart Contract Integration with Frontend
 This project demonstrates the integration of a smart contract with a frontend application using Ethereum, React, and Hardhat.
 
